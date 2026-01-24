@@ -42,28 +42,28 @@ export function Engagement() {
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={engagementData}>
                 <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                <XAxis dataKey="name" className="text-xs" />
-                <YAxis className="text-xs" />
+                <XAxis dataKey="name" tick={{ fontSize: 12 }} />
+                <YAxis tick={{ fontSize: 12 }} />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: "hsl(var(--card))",
-                    border: "1px solid hsl(var(--border))",
+                    backgroundColor: "var(--card)",
+                    border: "1px solid var(--border)",
                     borderRadius: "8px",
                   }}
                 />
                 <Line
                   type="monotone"
                   dataKey="comments"
-                  stroke="hsl(var(--primary))"
+                  stroke="var(--primary)"
                   strokeWidth={2}
-                  dot={{ fill: "hsl(var(--primary))" }}
+                  dot={{ fill: "var(--primary)" }}
                 />
                 <Line
                   type="monotone"
                   dataKey="shares"
-                  stroke="hsl(var(--genre-death-metal))"
+                  stroke="var(--genre-death-metal)"
                   strokeWidth={2}
-                  dot={{ fill: "hsl(var(--genre-death-metal))" }}
+                  dot={{ fill: "var(--genre-death-metal)" }}
                 />
               </LineChart>
             </ResponsiveContainer>

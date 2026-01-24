@@ -56,7 +56,7 @@ export function ChartsRow() {
             <CardTitle className="text-lg">Weekly Views</CardTitle>
             <CardDescription>Page views over the last 7 days</CardDescription>
           </CardHeader>
-          <CardContent>
+          <CardContent className="text-xs">
             <div className="h-75">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={viewsData}>
@@ -68,14 +68,14 @@ export function ChartsRow() {
                   <YAxis className="text-xs" />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "hsl(var(--card))",
-                      border: "1px solid hsl(var(--border))",
+                      backgroundColor: "var(--card)",
+                      border: "1px solid var(--border)",
                       borderRadius: "8px",
                     }}
                   />
                   <Bar
                     dataKey="views"
-                    fill="hsl(var(--primary))"
+                    fill="var(--primary)"
                     radius={[4, 4, 0, 0]}
                   />
                 </BarChart>
@@ -111,8 +111,8 @@ export function ChartsRow() {
                   </Pie>
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "hsl(var(--card))",
-                      border: "1px solid hsl(var(--border))",
+                      backgroundColor: "var(--card)",
+                      border: "1px solid var(--border)",
                       borderRadius: "8px",
                     }}
                   />

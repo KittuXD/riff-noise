@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${bebasNeue.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${bebasNeue.variable}`} data-scroll-behavior="smooth" suppressHydrationWarning >
       <body className="font-body antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}

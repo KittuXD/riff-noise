@@ -23,7 +23,7 @@ import {
 
 const navigation = [
   { name: "Overview", href: "/admin", icon: LayoutDashboard },
-  { name: "Content", href: "/admin/content", icon: FileText },
+  { name: "Content", href: "/admin/contents", icon: FileText },
   { name: "Users", href: "/admin/users", icon: Users },
   { name: "Comments", href: "/admin/comments", icon: MessageSquare },
   { name: "Categories", href: "/admin/categories", icon: Tag },

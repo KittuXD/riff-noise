@@ -4,11 +4,19 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 export function ThemeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  if (!theme) {
+  // Only render after client-side hydration
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Render a placeholder button during SSR and initial render
+  if (!mounted) {
     return (
       <Button variant="ghost" size="icon" className="relative h-9 w-9">
         <span className="sr-only">Toggle theme</span>

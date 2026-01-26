@@ -208,7 +208,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                 onClick={onClose}
                 className="p-2 rounded-lg hover:bg-muted transition-colors text-muted-foreground"
               >
-                <kbd className="text-xs font-mono bg-muted px-2 py-1 rounded">ESC</kbd>
+                <kbd className="text-xs font-mono bg-muted px-2 py-1 rounded">X</kbd>
               </button>
             </div>
 
@@ -234,6 +234,8 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                         src={result.image}
                         alt={result.title}
                         className="w-12 h-12 rounded-lg object-cover"
+                        width={1200}
+                        height={800}
                       />
                       <div className="flex-1 min-w-0">
                         <p className="font-medium truncate">{result.title}</p>
@@ -268,6 +270,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                         </motion.button>
                       ))}
                     </div>
+
                   </div>
 
                   {/* Trending */}

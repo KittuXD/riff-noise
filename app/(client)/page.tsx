@@ -3,8 +3,8 @@
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef } from "react";
 import { TrendingUp, Flame, Music2, Newspaper, Mic2, Disc3 } from "lucide-react";
-import { GenreBar } from "@/components/client/index/GenreBar";
-import { ArticleCard } from "@/components/client/index/ArticleCard";
+import { GenreBar } from "@/components/client/GenreBar";
+import { ArticleCard } from "@/components/client/ArticleCard";
 import { SectionHeader } from "@/components/client/index/SectionHeader";
 import { AdBanner } from "@/components/client/AdBanner";
 import { Button } from "@/components/ui/button";

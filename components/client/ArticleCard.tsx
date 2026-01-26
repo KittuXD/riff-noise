@@ -9,7 +9,6 @@ import { Article, getGenreVariant } from "@/lib/data";
 import { BookmarkButton } from "@/components/client/BookmarkButton";
 import { ShareButton } from "@/components/client/ShareButton";
 import Image from "next/image";
-// import Image from "next/image"; // Remove this
 
 interface ArticleCardProps {
   article: Article;
@@ -26,12 +25,12 @@ export function ArticleCard({ article, variant = "default", showActions = true }
     if (typeof window !== 'undefined') {
       return `${window.location.origin}${articleUrl}`;
     }
-    return articleUrl; // Fallback for SSR
+    return articleUrl;
   };
 
   if (variant === "featured") {
     return (
-      <Link href={articleUrl}> {/* Changed from href to 'to' */}
+      <Link href={articleUrl}>
         <motion.div
           whileHover={{ scale: 1.01 }}
           className="relative h-125 md:h-150 rounded-sm overflow-hidden group border border-border/50"

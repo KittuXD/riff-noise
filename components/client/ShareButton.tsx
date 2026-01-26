@@ -1,4 +1,5 @@
 "use client"
+
 import { motion } from "framer-motion";
 import { Share2, Twitter, Facebook, Link2 } from "lucide-react";
 import { Button } from "@/components/ui/button";

@@ -12,8 +12,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LogOut } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export function DashboardHeader() {
+
+  const navigate =useRouter();
   const profile = {
     id: "1",
     email: "admin@riffnoise.com",
@@ -23,7 +26,7 @@ export function DashboardHeader() {
   };
 
   const handleSignOut = async () => {
-    console.log("Sign out");
+    navigate.push("/");
   };
 
   const getInitials = (name: string | null) => {

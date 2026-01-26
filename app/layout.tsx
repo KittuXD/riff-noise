@@ -1,5 +1,7 @@
 import { Inter, Bebas_Neue } from 'next/font/google';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from '@/components/ui/tooltip';
 import './globals.css';
 
 const inter = Inter({ 
@@ -25,7 +27,10 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${bebasNeue.variable}`} data-scroll-behavior="smooth" suppressHydrationWarning >
       <body className="font-body antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
+          <Sonner />
+          <TooltipProvider>
+            {children}
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

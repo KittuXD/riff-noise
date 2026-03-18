@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useShare } from "@/hooks/use-share";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 interface ShareButtonProps {
   title: string;
@@ -28,8 +29,12 @@ export function ShareButton({
   className,
 }: ShareButtonProps) {
   const { share, copyToClipboard, isSharing, canShare } = useShare();
+
+  // ✅ Start with empty string on both server and client, populate after mount
+  const [shareUrl, setShareUrl] = useState(url ?? "");
+  // ✅ Treat canShare as false until client has mounted
+  const [mounted, setMounted] = useState(false);
   
-  const shareUrl = url || (typeof window !== "undefined" ? window.location.href : "");
   const shareText = text || `Check out: ${title}`;
 
   const handleNativeShare = async (e: React.MouseEvent) => {
@@ -59,15 +64,12 @@ export function ShareButton({
   };
 
   // On mobile with native share, use single button
-  if (canShare) {
+  if (mounted && canShare) {
     return (
       <Button
         variant="ghost"
         size={size === "sm" ? "icon" : "default"}
-        className={cn(
-          size === "sm" ? "h-8 w-8" : "h-9 w-9",
-          className
-        )}
+        className={cn(size === "sm" ? "h-8 w-8" : "h-9 w-9", className)}
         onClick={handleNativeShare}
         disabled={isSharing}
         aria-label="Share"
